@@ -40,12 +40,12 @@ class Todo extends Component {
     });
   };
 
-  markAsCompleated = id => {
+  markAsCompleted = id => {
     const foundTask = this.state.items.find(task => task.id === id);
 
     foundTask.completed = true;
 
-    this.setState({ items: [...this.state.items, ...foundTask] });
+    this.setState({ items: [...this.state.items] });
   };
 
   removeTask = id => {
@@ -82,7 +82,7 @@ class Todo extends Component {
         </form>
         <List
           items={this.state.items}
-          markAsCompleated={this.markAsCompleated}
+          markAsCompleted={this.markAsCompleted}
           removeTask={this.removeTask}
         />
       </div>
